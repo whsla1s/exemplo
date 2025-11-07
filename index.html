@@ -13,15 +13,23 @@
 
     <header>
         <div class="container nav-content">
-            <h1 class="logo">Portfólio <span class="highlight">Gênio</span></h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="ranking.html">Ranking</a></li>
-                </ul>
-            </nav>
-            <button id="toggle-theme" title="Alternar Modo Noturno">
-                <i class="fas fa-sun"></i> </button>
+            <a href="index.html" class="wyden-logo-link">
+                <img src="assets/img/logo-wyden.png" alt="Logo Wyden" class="wyden-logo">
+            </a>
+
+            <h1 class="logo competition-title">Competição de <span class="highlight">Portfólios</span></h1>
+
+            <div class="nav-right-group">
+                <nav>
+                    <ul>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="ranking.html">Ranking</a></li>
+                    </ul>
+                </nav>
+                <button id="toggle-theme" title="Alternar Modo Noturno">
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -31,18 +39,17 @@
                 <h2>Mostre Seu Trabalho. <span class="highlight">Conquiste o Topo.</span></h2>
                 <p>Junte-se à nossa competição de portfólios de desenvolvimento! Vote nos projetos mais inovadores e
                     apresente sua própria obra-prima para o mundo. O futuro do desenvolvimento web está aqui.</p>
-                <a href="#galeria" class="btn btn-primary">Ver Portfólios</a>
             </div>
         </section>
 
         <section id="galeria" class="portfolio-gallery">
             <div class="container">
-                <h3>Portfólios em Destaque</h3>
-                <div class="card-grid">
+
+                <div class="card-grid" id="portfolio-list">
 
                     <div class="portfolio-card">
                         <div class="card-image">
-                            <img src="img/exemplo.jpg" alt="exemplo">
+                            <img src="assets/img/capa1.jpg" alt="Capa do Portfólio Design System V.2">
                         </div>
                         <div class="card-info">
                             <h4>Design System V.2</h4>
@@ -57,7 +64,7 @@
 
                     <div class="portfolio-card">
                         <div class="card-image">
-                            <img src="img/exemplo.jpg" alt="exemplo">
+                            <img src="assets/img/capa2.jpg" alt="Capa do Portfólio API de E-commerce Escalável">
                         </div>
                         <div class="card-info">
                             <h4>API de E-commerce Escalável</h4>
@@ -72,7 +79,7 @@
 
                     <div class="portfolio-card">
                         <div class="card-image">
-                            <img src="img/exemplo.jpg" alt="exemplo">
+                            <img src="assets/img/capa3.jpg" alt="Capa do Portfólio App de Saúde Mental">
                         </div>
                         <div class="card-info">
                             <h4>App de Saúde Mental</h4>
@@ -86,6 +93,15 @@
                     </div>
 
                 </div>
+
+                <div class="pagination-container">
+                    <button id="prev-btn" class="btn pagination-btn" disabled><i class="fas fa-angle-left"></i>
+                        Anterior</button>
+                    <div class="page-numbers" id="page-numbers">
+                    </div>
+                    <button id="next-btn" class="btn pagination-btn">Próxima <i class="fas fa-angle-right"></i></button>
+                </div>
+
             </div>
         </section>
     </main>

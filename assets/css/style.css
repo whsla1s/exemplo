@@ -1,23 +1,40 @@
-/* Paleta de Cores */
+/* Paleta de Cores e Variáveis de Tema */
 :root {
     --color-primary: #FFA226; /* Amarelo Laranja Principal */
     --color-secondary: #88025B; /* Vinho/Roxo Secundário */
-    --color-text: #333; /* Texto Padrão (Modo Claro) */
-    --color-background: #f4f4f4; /* Fundo Padrão (Modo Claro) */
-    --color-card-bg: #fff; /* Fundo do Card (Modo Claro) */
-    --color-footer-bg: #222; /* Fundo do Rodapé (Escuro) */
-    --color-footer-text: #fff; /* Texto do Rodapé */
-    --color-border: #ddd; /* Borda leve */
-    --color-rating-active: var(--color-primary); /* Estrela Ativa */
+    
+    /* Modo Claro (Default) */
+    --color-text: #333; 
+    --color-background: #fff; /* Fundo Geral (Body) agora é BRANCO PURO */
+    --color-light-bg: #fff; /* Cor do fundo de cards e hero (Branco puro) */
+    
+    /* CORES DO CABEÇALHO */
+    --color-header-bg: var(--color-secondary); /* Fundo do Cabeçalho: VINHO */
+    --color-header-text: #fff; /* Texto do Cabeçalho: BRANCO */
+    --color-hero-bg: var(--color-light-bg); /* Fundo do Hero: BRANCO */
+    --color-hero-text: var(--color-text); /* Texto do Hero: ESCURO */
+    
+    --color-footer-bg: #222; 
+    --color-footer-text: #fff; 
+    --color-border: #ddd; 
+    --color-rating-active: var(--color-primary); 
+    --color-table-row-bg: rgba(255, 162, 38, 0.05); 
 }
 
 /* Modo Noturno */
 body.dark-mode {
     --color-text: #f4f4f4;
-    --color-background: #1a1a1a;
-    --color-card-bg: #2c2c2c;
+    --color-background: #1a1a1a; /* Fundo Geral: PRETO TOTAL */
+    --color-card-dark-bg: #222; /* Fundo dos Cards/Modal (Para ter contraste com o fundo) */
+    
+    --color-header-bg: #111; 
+    --color-header-text: #fff;
+    --color-hero-bg: var(--color-background); /* AJUSTADO: Usa o PRETO TOTAL */
+    --color-hero-text: var(--color-text);
+    
     --color-border: #444;
     --color-footer-bg: #111;
+    --color-table-row-bg: rgba(255, 255, 255, 0.05);
 }
 
 /* Estilos Globais */
@@ -31,7 +48,7 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: var(--color-text);
-    background-color: var(--color-background);
+    background-color: var(--color-background); 
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -83,47 +100,72 @@ body {
     border-color: var(--color-secondary);
 }
 
-/* --- Cabeçalho/Navegação --- */
+/* --- Cabeçalho/Navegação (Fundo VINHO) --- */
 header {
-    background-color: var(--color-card-bg); /* Fundo claro para o cabeçalho, escuro no dark mode */
-    border-bottom: 1px solid var(--color-border);
-    padding: 15px 0;
+    background-color: var(--color-header-bg); /* VINHO */
+    border-bottom: none; 
+    padding: 40px 0; 
 }
 
 .nav-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
+    align-items: center; /* Garante alinhamento vertical */
+    position: relative; 
+}
+
+/* Logo Wyden (Canto Esquerdo) */
+.wyden-logo {
+    height: 40px; 
+    width: auto;
+}
+
+/* Título Centralizado */
+.competition-title {
+    font-size: 3.5em; 
+    color: var(--color-header-text); /* BRANCO */
+    position: absolute; 
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0; /* AJUSTADO: Remove margem */
+    white-space: nowrap; 
+    z-index: 5; 
+}
+
+/* Agrupamento da Navegação e Botão de Tema (Canto Direito) */
+.nav-right-group {
+    display: flex;
     align-items: center;
+    gap: 15px; 
+    z-index: 10; 
 }
 
-.logo {
-    font-size: 1.8em;
-    color: var(--color-secondary);
-}
-
-nav ul {
+.nav-right-group nav ul {
     list-style: none;
     display: flex;
+    margin: 0;
+    padding: 0;
 }
 
-nav ul li a {
+.nav-right-group nav ul li a {
     text-decoration: none;
-    color: var(--color-text);
-    padding: 10px 15px;
+    color: var(--color-header-text); /* BRANCO */
+    padding: 15px 18px; 
+    font-size: 1.3em;
     transition: color 0.3s;
-    font-weight: 500;
+    font-weight: bold; 
 }
 
-nav ul li a:hover,
-nav ul li a.active {
+.nav-right-group nav ul li a:hover,
+.nav-right-group nav ul li a.active {
     color: var(--color-primary);
 }
 
 #toggle-theme {
     background: none;
     border: none;
-    color: var(--color-text);
-    font-size: 1.5em;
+    color: var(--color-header-text); /* BRANCO */
+    font-size: 2.2em; 
     cursor: pointer;
     transition: color 0.3s;
 }
@@ -132,15 +174,17 @@ nav ul li a.active {
     color: var(--color-primary);
 }
 
-/* --- Seção Principal (Hero) --- */
+/* --- Seção Principal (Hero) - Fundo BRANCO/PRETO --- */
 .hero {
-    background-color: var(--color-secondary);
-    color: #fff;
+    background-color: var(--color-hero-bg); /* AGORA USA o BACKGROUND GERAL */
+    color: var(--color-hero-text); /* ESCURO/BRANCO */
     padding: 60px 0;
     text-align: center;
+    border-bottom: none; 
 }
 
 .hero h2 {
+    color: var(--color-text); 
     font-size: 2.5em;
     margin-bottom: 20px;
 }
@@ -155,7 +199,8 @@ nav ul li a.active {
 
 /* --- Galeria de Cards de Portfólios --- */
 .portfolio-gallery {
-    padding: 40px 0;
+    background-color: var(--color-background); /* AGORA USA o BACKGROUND GERAL */
+    padding: 20px 0; 
 }
 
 .portfolio-gallery h3 {
@@ -172,12 +217,16 @@ nav ul li a.active {
 }
 
 .portfolio-card {
-    background-color: var(--color-card-bg);
+    background-color: var(--color-light-bg); /* Fundo do Card: BRANCO */
     border: 1px solid var(--color-border);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
+}
+
+body.dark-mode .portfolio-card {
+    background-color: var(--color-card-dark-bg); /* Fundo do Card no Dark Mode: Cinza Escuro */
 }
 
 .portfolio-card:hover {
@@ -187,20 +236,19 @@ nav ul li a.active {
 
 .card-image {
     height: 180px;
-    background-color: #aaa; /* Placeholder para a imagem */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #333;
-    font-weight: bold;
+    background-color: #aaa; 
     border-bottom: 1px solid var(--color-border);
+}
+
+body.dark-mode .card-image {
+    background-color: #444; /* Escurece o placeholder da imagem no dark mode */
 }
 
 .card-image img {
     width: 100%;
     height: 100%;
-    /* Garante que a imagem cubra a área sem distorcer, cortando o excesso se necessário */
     object-fit: cover; 
+    display: block;
 }
 
 .card-info {
@@ -217,12 +265,6 @@ nav ul li a.active {
     font-size: 0.9em;
 }
 
-.tag {
-    color: var(--color-primary);
-    font-weight: bold;
-    margin-top: 5px !important;
-}
-
 .card-actions {
     display: flex;
     justify-content: space-between;
@@ -235,18 +277,75 @@ nav ul li a.active {
     margin: 0 5px;
 }
 
-/* --- Rodapé --- */
-footer {
-    background-color: var(--color-footer-bg);
-    color: var(--color-footer-text);
-    padding: 20px 0;
-    text-align: center;
-    margin-top: 30px;
+/* --- Estilos da Paginação --- */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    gap: 15px; 
+}
+
+.pagination-btn {
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: opacity 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+}
+
+.pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.page-numbers {
+    display: flex;
+    gap: 8px;
+}
+
+.page-number {
+    padding: 8px 12px;
+    border: 1px solid var(--color-secondary);
+    color: var(--color-secondary);
+    background-color: transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.page-number:hover {
+    background-color: rgba(255, 162, 38, 0.2);
+    border-color: var(--color-primary);
+}
+
+.page-number.active {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    border-color: var(--color-primary);
+}
+
+body.dark-mode .page-number {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+body.dark-mode .page-number:hover {
+    background-color: rgba(255, 162, 38, 0.1);
 }
 
 /* --- Modal de Votação (Pop-up) --- */
 .modal {
-    display: none; /* Escondido por padrão */
+    display: none; 
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -254,13 +353,13 @@ footer {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.7); /* Fundo semi-transparente */
+    background-color: rgba(0,0,0,0.7); 
 }
 
 .modal-content {
-    background-color: var(--color-card-bg);
+    background-color: var(--color-light-bg); 
     color: var(--color-text);
-    margin: 15% auto; /* 15% do topo e centralizado */
+    margin: 15% auto; 
     padding: 30px;
     border: 1px solid var(--color-primary);
     border-radius: 10px;
@@ -268,6 +367,10 @@ footer {
     max-width: 500px;
     position: relative;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .modal-content {
+    background-color: var(--color-card-dark-bg); /* Fundo do Modal no Dark Mode: Cinza Escuro */
 }
 
 .close-button {
@@ -299,7 +402,7 @@ footer {
 .stars {
     font-size: 1.5em;
     cursor: pointer;
-    color: #ccc; /* Estrela não preenchida padrão */
+    color: #ccc; 
     margin-top: 5px;
 }
 
@@ -308,16 +411,7 @@ footer {
 }
 
 .stars .fas.fa-star {
-    color: var(--color-rating-active); /* Estrela preenchida (ativa) */
-}
-
-.stars .far.fa-star:hover {
-    color: var(--color-rating-active); /* Efeito hover */
-}
-
-#voting-form .btn-primary {
-    width: 100%;
-    margin-top: 20px;
+    color: var(--color-rating-active); 
 }
 
 /* --- Estilos da Seção de Ranking --- */
@@ -339,7 +433,7 @@ footer {
 }
 
 .table-responsive {
-    overflow-x: auto; /* Garante que a tabela seja responsiva em telas pequenas */
+    overflow-x: auto; 
 }
 
 .ranking-table {
@@ -347,12 +441,16 @@ footer {
     border-collapse: collapse;
     margin: 20px 0;
     font-size: 1em;
-    min-width: 600px; /* Garante a largura mínima */
+    min-width: 600px; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    overflow: hidden; /* Importante para o border-radius funcionar */
-    background-color: var(--color-card-bg);
+    overflow: hidden; 
+    background-color: var(--color-light-bg); /* Fundo da Tabela: BRANCO */
     border: 1px solid var(--color-border);
+}
+
+body.dark-mode .ranking-table {
+    background-color: var(--color-card-dark-bg); /* Fundo da Tabela no Dark Mode: Cinza Escuro */
 }
 
 .ranking-table thead tr {
@@ -374,45 +472,5 @@ footer {
 }
 
 .ranking-table tbody tr:nth-of-type(even) {
-    /* Listras para melhor leitura */
-    background-color: rgba(var(--color-primary), 0.05);
-}
-
-body.dark-mode .ranking-table tbody tr:nth-of-type(even) {
-    background-color: rgba(255, 255, 255, 0.05);
-}
-
-.ranking-table tbody tr:hover {
-    background-color: var(--color-primary);
-    color: var(--color-secondary);
-    cursor: default;
-}
-
-.ranking-table tbody tr.top-rank {
-    background-color: var(--color-primary);
-    color: var(--color-secondary);
-    font-weight: bold;
-    font-size: 1.1em;
-}
-
-.ranking-table tbody tr.top-rank:hover {
-    background-color: var(--color-primary);
-    filter: brightness(1.1);
-    color: var(--color-secondary);
-}
-
-.ranking-table td:nth-child(1) {
-    /* Estilo para a coluna de Posição (#) */
-    text-align: center;
-    width: 50px;
-}
-
-.ranking-table td:nth-last-child(-n+2) {
-    /* Estilo para colunas de Pontuação e Votos */
-    text-align: center;
-    font-weight: bold;
-}
-
-.ranking-info {
-    margin-top: 20px;
+    background-color: var(--color-table-row-bg);
 }
