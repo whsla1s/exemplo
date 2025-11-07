@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking da Competição de Portfólios</title>
+
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/cabecalho.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+
+    <link rel="stylesheet" href="ranking.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="light-mode">
+
+    <header class="header">
+        <div class="container nav-content">
+            <h1 class="logo"><a href="index.html">🏆 Rankeie Portfólios</a></h1>
+            <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="#ranking">Ranking</a>
+                <button id="mode-toggle" aria-label="Alternar Modo Claro/Escuro" class="mode-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main id="ranking" class="ranking-section container">
+        <h2>🥇 Tabela de Classificação - Top Portfólios</h2>
+        <p class="ranking-description">Os portfólios mais bem avaliados pela comunidade até o momento. Acompanhe a
+            disputa!</p>
+
+        <div class="ranking-table-container">
+            <table class="ranking-table">
+                <thead>
+                    <tr>
+                        <th>Posição</th>
+                        <th>Portfólio</th>
+                        <th>Autor(a)</th>
+                        <th>Categoria</th>
+                        <th>Média de Votos</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Posição" class="rank-pos rank-gold">#1</td>
+                        <td data-label="Portfólio">Projeto "Nexus"</td>
+                        <td data-label="Autor(a)">Ana Souza</td>
+                        <td data-label="Categoria">Design UX/UI</td>
+                        <td data-label="Média de Votos" class="score">4.9 <i class="fas fa-star"></i></td>
+                        <td data-label="Ações"><a href="#" class="btn btn-small btn-view">Ver</a></td>
+                    </tr>
+                    <tr>
+                        <td data-label="Posição" class="rank-pos rank-silver">#2</td>
+                        <td data-label="Portfólio">Backend Master</td>
+                        <td data-label="Autor(a)">Bruno Reis</td>
+                        <td data-label="Categoria">Desenvolvimento</td>
+                        <td data-label="Média de Votos" class="score">4.7 <i class="fas fa-star"></i></td>
+                        <td data-label="Ações"><a href="#" class="btn btn-small btn-view">Ver</a></td>
+                    </tr>
+                    <tr>
+                        <td data-label="Posição" class="rank-pos rank-bronze">#3</td>
+                        <td data-label="Portfólio">Vídeo-Identidade</td>
+                        <td data-label="Autor(a)">Carla Mello</td>
+                        <td data-label="Categoria">Motion Graphics</td>
+                        <td data-label="Média de Votos" class="score">4.5 <i class="fas fa-star"></i></td>
+                        <td data-label="Ações"><a href="#" class="btn btn-small btn-view">Ver</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="back-home">
+            <a href="index.html" class="btn btn-vote"><i class="fas fa-arrow-left"></i> Voltar para a Home</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Competição de Portfólios. Todos os direitos reservados.</p>
+            <p>Contato: <a href="mailto:contato@competicao.com">contato@competicao.com</a></p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

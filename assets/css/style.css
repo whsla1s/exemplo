@@ -1,0 +1,327 @@
+/* Variáveis CSS para Cores e Modo Noturno */
+:root {
+    /* Cores principais */
+    --primary-color: #FFA226; /* Amarelo */
+    --secondary-color: #88025B; /* Vinho */
+    --accent-color: #FEE715; /* Amarelo Secundário */
+    --success-color: #28a745;
+    
+    /* Cores do modo claro (light-mode) */
+    --bg-primary-light: #f4f4f9;
+    --bg-secondary-light: #ffffff;
+    --text-color-light: #333333;
+    --card-shadow-light: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode {
+    /* Cores do modo escuro (dark-mode) */
+    --bg-primary-light: #121212;
+    --bg-secondary-light: #1e1e1e;
+    --text-color-light: #e0e0e0;
+    --card-shadow-light: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+/* Reset Básico e Tipografia */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-primary-light);
+    color: var(--text-color-light);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h2, h3 {
+    color: var(--secondary-color);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/* --- Cabeçalho/Navegação --- */
+.header {
+    background-color: var(--bg-secondary-light);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.navbar a {
+    margin-left: 20px;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.mode-toggle {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 1.3em;
+    cursor: pointer;
+    margin-left: 20px;
+    padding: 5px;
+}
+
+/* Cor do ícone no modo noturno */
+.dark-mode .mode-toggle {
+    color: var(--accent-color);
+}
+
+/* --- Seção Hero --- */
+.hero {
+    background-color: var(--secondary-color);
+    color: var(--bg-primary-light);
+    text-align: center;
+    padding: 80px 20px;
+    margin-bottom: 40px;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: var(--accent-color); /* Destaque no título do Hero */
+}
+
+.hero p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- Galeria de Cards --- */
+.portfolio-gallery {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.portfolio-gallery h3 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Estilo do Card */
+.portfolio-card {
+    background-color: var(--bg-secondary-light);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: var(--card-shadow-light);
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 5px solid var(--primary-color);
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card-header h4 {
+    margin: 0;
+    font-size: 1.3em;
+    color: var(--text-color-light);
+}
+
+.icon-design, .icon-dev, .icon-motion {
+    font-size: 1.5em;
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.portfolio-card p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.card-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Estilos de Botão */
+.btn {
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    border: 1px solid transparent;
+    text-align: center;
+    flex-grow: 1;
+    margin: 0 5px;
+}
+
+.btn-view {
+    background-color: var(--secondary-color);
+    color: var(--bg-primary-light);
+}
+
+.btn-view:hover {
+    background-color: #6a0142; /* Tom mais escuro de Vinho */
+}
+
+.btn-vote {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    border: 1px solid var(--primary-color);
+}
+
+.btn-vote:hover {
+    background-color: var(--accent-color);
+}
+
+/* --- Pop-up de Votação (Modal) --- */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--bg-secondary-light);
+    color: var(--text-color-light);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow-light);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close-btn {
+    color: var(--text-color-light);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-content h4 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.rating-category {
+    margin-bottom: 20px;
+}
+
+.rating-category label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.stars .star-icon {
+    font-size: 1.5em;
+    color: #ccc; /* Cor da estrela vazia */
+    cursor: pointer;
+    transition: color 0.2s;
+    margin-right: 5px;
+}
+
+.stars .star-icon.fas {
+    color: var(--primary-color); /* Cor da estrela preenchida */
+}
+
+.btn-submit-vote {
+    display: block;
+    width: 100%;
+    margin-top: 25px;
+    background-color: var(--success-color);
+    color: white;
+    border: none;
+}
+
+.btn-submit-vote:hover {
+    background-color: #218838;
+}
+
+/* --- Rodapé --- */
+.footer {
+    background-color: var(--secondary-color);
+    color: var(--bg-primary-light);
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer a {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+/* Estilos para Modo Noturno */
+.dark-mode .header {
+    background-color: var(--bg-secondary-light);
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .portfolio-card {
+    background-color: var(--bg-secondary-light);
+    box-shadow: var(--card-shadow-light);
+}
+
+.dark-mode .btn-vote {
+    color: var(--text-color-light); /* Para garantir a visibilidade do texto */
+}
+
+.dark-mode .modal-content {
+    background-color: #2a2a2a;
+}
