@@ -4,142 +4,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Competição de Portfólios - Rankeie os Melhores!</title>
+    <title>Competição de Portfólios | Home</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-<body class="light-mode">
+<body>
 
-    <header class="header">
+    <header>
         <div class="container nav-content">
-            <h1 class="logo"><a href="index.html">🏆 Rankeie Portfólios</a></h1>
-            <nav class="navbar">
-                <a href="#home">Home</a>
-                <a href="ranking.html" target="_blank">Ranking</a>
-                <button id="mode-toggle" aria-label="Alternar Modo Claro/Escuro" class="mode-toggle">
-                    <i class="fas fa-moon"></i>
-                </button>
+            <h1 class="logo">Portfólio <span class="highlight">Gênio</span></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="ranking.html">Ranking</a></li>
+                </ul>
             </nav>
+            <button id="toggle-theme" title="Alternar Modo Noturno">
+                <i class="fas fa-sun"></i> </button>
         </div>
     </header>
 
-    <section id="home" class="hero">
-        <div class="container hero-content">
-            <h2>✨ Destaque Seu Talento. Vote nos Melhores.</h2>
-            <p>Participe da maior competição de portfólios digitais do ano! Veja, inspire-se e registre seu voto para
-                ajudar a definir o futuro do design e desenvolvimento.</p>
-        </div>
-    </section>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Mostre Seu Trabalho. <span class="highlight">Conquiste o Topo.</span></h2>
+                <p>Junte-se à nossa competição de portfólios de desenvolvimento! Vote nos projetos mais inovadores e
+                    apresente sua própria obra-prima para o mundo. O futuro do desenvolvimento web está aqui.</p>
+                <a href="#galeria" class="btn btn-primary">Ver Portfólios</a>
+            </div>
+        </section>
 
-    <section id="galeria" class="portfolio-gallery container">
-        <h3>Galeria de Portfólios em Destaque</h3>
+        <section id="galeria" class="portfolio-gallery">
+            <div class="container">
+                <h3>Portfólios em Destaque</h3>
+                <div class="card-grid">
 
-        <div class="cards-grid">
-            <div class="portfolio-card">
-                <div class="card-header">
-                    <i class="fas fa-palette icon-design"></i>
-                    <h4>Portfólio de Design UX/UI</h4>
-                </div>
-                <p><strong>Autor:</strong> Ana Souza</p>
-                <p>Focado em usabilidade e interfaces modernas para e-commerce.</p>
-                <div class="card-buttons">
-                    <a href="#" target="_blank" class="btn btn-view">Ver Portfólio <i
-                            class="fas fa-external-link-alt"></i></a>
-                    <button class="btn btn-vote" data-portfolio-id="1">Registrar Voto <i
-                            class="fas fa-vote-yea"></i></button>
+                    <div class="portfolio-card">
+                        <div class="card-image">
+                            <img src="img/exemplo.jpg" alt="exemplo">
+                        </div>
+                        <div class="card-info">
+                            <h4>Design System V.2</h4>
+                            <p>Autor: **Alice Souza**</p>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#" target="_blank" class="btn btn-secondary">Ver Portfólio</a>
+                            <button class="btn btn-primary btn-vote" data-id="1" data-name="Design System V.2">Registrar
+                                Voto</button>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card">
+                        <div class="card-image">
+                            <img src="img/exemplo.jpg" alt="exemplo">
+                        </div>
+                        <div class="card-info">
+                            <h4>API de E-commerce Escalável</h4>
+                            <p>Autor: **Bruno Lima**</p>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#" target="_blank" class="btn btn-secondary">Ver Portfólio</a>
+                            <button class="btn btn-primary btn-vote" data-id="2"
+                                data-name="API de E-commerce Escalável">Registrar Voto</button>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card">
+                        <div class="card-image">
+                            <img src="img/exemplo.jpg" alt="exemplo">
+                        </div>
+                        <div class="card-info">
+                            <h4>App de Saúde Mental</h4>
+                            <p>Autor: **Carla Ferreira**</p>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#" target="_blank" class="btn btn-secondary">Ver Portfólio</a>
+                            <button class="btn btn-primary btn-vote" data-id="3"
+                                data-name="App de Saúde Mental">Registrar Voto</button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-
-            <div class="portfolio-card">
-                <div class="card-header">
-                    <i class="fas fa-code icon-dev"></i>
-                    <h4>Portfólio de Desenvolvimento Full-Stack</h4>
-                </div>
-                <p><strong>Autor:</strong> Bruno Reis</p>
-                <p>Projetos robustos utilizando MERN Stack e arquitetura de microsserviços.</p>
-                <div class="card-buttons">
-                    <a href="#" target="_blank" class="btn btn-view">Ver Portfólio <i
-                            class="fas fa-external-link-alt"></i></a>
-                    <button class="btn btn-vote" data-portfolio-id="2">Registrar Voto <i
-                            class="fas fa-vote-yea"></i></button>
-                </div>
-            </div>
-
-            <div class="portfolio-card">
-                <div class="card-header">
-                    <i class="fas fa-video icon-motion"></i>
-                    <h4>Portfólio de Motion Graphics & Branding</h4>
-                </div>
-                <p><strong>Autor:</strong> Carla Mello</p>
-                <p>Criação de identidade visual e animações 2D/3D para campanhas.</p>
-                <div class="card-buttons">
-                    <a href="#" target="_blank" class="btn btn-view">Ver Portfólio <i
-                            class="fas fa-external-link-alt"></i></a>
-                    <button class="btn btn-vote" data-portfolio-id="3">Registrar Voto <i
-                            class="fas fa-vote-yea"></i></button>
-                </div>
-            </div>
-        </div>
-
-    </section>
+        </section>
+    </main>
 
     <div id="voting-modal" class="modal">
         <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h4>Vote no Portfólio #<span id="portfolio-id"></span></h4>
-
+            <span class="close-button">&times;</span>
+            <h4>Vote no Portfólio: <span id="portfolio-name">Nome do Portfólio</span></h4>
             <form id="voting-form">
-                <div class="rating-category">
-                    <label>1. Design e Estética:</label>
-                    <div class="stars" data-category="design">
-                        <i class="far fa-star star-icon" data-value="1"></i>
-                        <i class="far fa-star star-icon" data-value="2"></i>
-                        <i class="far fa-star star-icon" data-value="3"></i>
-                        <i class="far fa-star star-icon" data-value="4"></i>
-                        <i class="far fa-star star-icon" data-value="5"></i>
-                        <input type="hidden" name="design_score" value="0">
+                <input type="hidden" id="portfolio-id" value="">
+
+                <div class="rating-section">
+                    <label>Inovação e Criatividade:</label>
+                    <div class="stars" data-category="inovacao">
+                        <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
+                            class="far fa-star"></i><i class="far fa-star"></i>
                     </div>
+                    <input type="hidden" name="inovacao_rating" value="0">
                 </div>
 
-                <div class="rating-category">
-                    <label>2. Funcionalidade e Usabilidade:</label>
-                    <div class="stars" data-category="usability">
-                        <i class="far fa-star star-icon" data-value="1"></i>
-                        <i class="far fa-star star-icon" data-value="2"></i>
-                        <i class="far fa-star star-icon" data-value="3"></i>
-                        <i class="far fa-star star-icon" data-value="4"></i>
-                        <i class="far fa-star star-icon" data-value="5"></i>
-                        <input type="hidden" name="usability_score" value="0">
+                <div class="rating-section">
+                    <label>Qualidade do Código e Performance:</label>
+                    <div class="stars" data-category="codigo">
+                        <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
+                            class="far fa-star"></i><i class="far fa-star"></i>
                     </div>
+                    <input type="hidden" name="codigo_rating" value="0">
                 </div>
 
-                <div class="rating-category">
-                    <label>3. Criatividade e Originalidade:</label>
-                    <div class="stars" data-category="creativity">
-                        <i class="far fa-star star-icon" data-value="1"></i>
-                        <i class="far fa-star star-icon" data-value="2"></i>
-                        <i class="far fa-star star-icon" data-value="3"></i>
-                        <i class="far fa-star star-icon" data-value="4"></i>
-                        <i class="far fa-star star-icon" data-value="5"></i>
-                        <input type="hidden" name="creativity_score" value="0">
+                <div class="rating-section">
+                    <label>Apresentação e Usabilidade (UX/UI):</label>
+                    <div class="stars" data-category="usabilidade">
+                        <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
+                            class="far fa-star"></i><i class="far fa-star"></i>
                     </div>
+                    <input type="hidden" name="usabilidade_rating" value="0">
                 </div>
 
-                <button type="submit" class="btn btn-submit-vote">Votar!</button>
+                <button type="submit" class="btn btn-primary">Enviar Voto</button>
             </form>
+            <p id="voting-message" style="margin-top: 10px; color: green; display: none;">Voto registrado com sucesso!
+            </p>
         </div>
     </div>
 
-
-    <footer class="footer">
+    <footer>
         <div class="container">
             <p>&copy; 2025 Competição de Portfólios. Todos os direitos reservados.</p>
-            <p>Contato: <a href="mailto:contato@competicao.com">contato@competicao.com</a></p>
+            <p>Contato: contato@competicao.dev</p>
         </div>
     </footer>
 
     <script src="assets/js/script.js"></script>
+
 </body>
 
 </html>
